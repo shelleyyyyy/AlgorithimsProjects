@@ -1,39 +1,60 @@
 package Revision.DataStructures;
 
+// Help Recieved
+// I googled the syntax to make an array
+
 public class Question {
 
+    private static int [] arr = {1, 3, 5, 6, 9, 11, 16};
 
-    public static void shift(int [] arr, int index){
+    private static int max = arr.length - 1;
+    private static int min = 0;
+
+    public static void shift(int index, int insert){
 
         int [] array = new int[arr.length + 1];
 
-        boolean bool = true;
-
-        for(int i = 0; i < arr.length; i++){
-            if(i == index && bool){
-                System.out.println(index);
-                array[i] = 0;
-                i--;
-                bool = false;
+        int j = 0;
+        for(int i = 0; i < array.length; i++){
+            if(i == index){
+                array[i] = insert;
+                continue;
             }
-            array[i] = arr[i];
+
+            array[i] = arr[j];
+
+            j++;
         }
 
-        print(array);
+        max++;
+        arr = array;
     }
     
 
-    public static void insert(int [] arr, int insert){
+    public static void insert(int insert){
         int low = 0;
         int high = arr.length;
+        int mid = 0;
+
 
         while(low < high){
-            int mid = (low + high) / 2;
+            mid = (low + high) / 2;
 
             if(arr[mid] == insert){
-                
+                shift(mid + 1, insert);
+                return;
+            }
+
+            if(arr[mid] > insert){
+                high = mid;
+            }
+
+            if(arr[mid] < insert){
+                low = mid + 1;
             }
         }
+
+        shift(mid, insert);
     }
 
     public static void print(int [] arr){
@@ -44,11 +65,13 @@ public class Question {
 
     public static void main(String[] args) {
 
-        int [] arr = {1, 3, 5, 6, 9, 11};
-
+        System.out.println(max);
         print(arr);
         System.out.println("");
-        shift(arr, 3);
-        
+        insert(16);
+        print(arr);
+        System.out.println("");
+        System.out.println(max);
+
     }
 }

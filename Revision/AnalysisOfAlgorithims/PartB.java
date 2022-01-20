@@ -1,5 +1,8 @@
 package Revision.AnalysisOfAlgorithims;
 
+// Help Recieved
+// I googled what a mod does
+
 public class PartB{
 
     public static boolean primeCheck(int check){
@@ -9,10 +12,11 @@ public class PartB{
                 return false;
             }
         }
-
-
+        
         return true;
     }
+
+
 
     public static void main(String[] args) {
 
