@@ -1,0 +1,2 @@
+
+Assuming that e is a constant nlogn would grow faster because sqrt(logn) is on the bottom of a fraction it will approach 0.
