@@ -1,0 +1,17 @@
+Describe the algorithms for insert, findMin, deleteMin, findMax, and deleteMax.
+
+Insert - We found the correct place for the new number by using a modified binary search which runs in O(log(n)). Then we shift every element right of this spot over one to make room
+    and insert the number which runs in O(n). Because of the data structure (array) we had to do a shift however if you used a more advanced data structure such as a linked list the
+    running time would have been O(log(n))
+
+findMin - This algorithm runs in constant time as our array is kept in order from least to greatest which allows us to find the min by looking in index[0].
+
+deleteMin - This algorithm runs in O(n) because when deleted the first element we move all elements left once to keep the smallest element in the first 
+    index. In hindsight this was not a good choice and we would have been better off just implamenting pointers. 
+
+findMax - This algorithim runs in constant time because the largest value is always kept in the last index of the array. 
+
+deleteMax - This algorithim runs in O(n), we realize that if we had a pointer at the max element in the array this would run in constant time, but because we were using an array 
+    to implement this algorithim we thought it would be better to delete the max by cloning the array into a smaller array and just not copying over the last element. If we were
+    using a differnt data structure such as a linked list we would have been able to implement our algorithims in contant time because to keep the highest value element in the last
+    array position we would not have had to clone the array. 
