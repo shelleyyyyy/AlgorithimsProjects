@@ -3,23 +3,33 @@ package Revision.AnalysisOfAlgorithims;
 // Help Recieved
 // I googled what a mod does
 
-public class PartB{
+//Part: C
+//Our program in part B runs in O(n) because we check all the numbers less than the given number to check.
 
-    public static boolean primeCheck(int check){
+public class PartB {
 
-        for(int i = 2; i < check; i++){
-            if(check % i == 0){
+    public static boolean primeCheck(int check) {
+
+        for (int i = 2; i < check; i++) {
+            if (check % i == 0) {
                 return false;
             }
         }
-        
+
         return true;
     }
 
-
-
     public static void main(String[] args) {
 
-        System.out.println(primeCheck(10));
+        int primes = 0;
+        for (int i = 2; i < 1001; i++) {
+
+            if (primeCheck(i)) {
+                primes++;
+            }
+
+        }
+
+        System.out.println(primes);
     }
 }
